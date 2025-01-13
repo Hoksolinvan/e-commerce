@@ -40,13 +40,21 @@ const Homepage = () => {
         </div>
   </div>
   </div>
-  
-  <div>
-  <Skeleton className="h-[400] w-[400] rounded-full  bg-[#9ca3af] z-[0]" />
+  {/* skibidi toilet */}
+  <div className="z-[0]">
+  <Skeleton className="h-[400] w-[400] rounded-full  bg-[#9ca3af]" />
   </div>
+  
    
 </section>
 
+<section className="w-full h-[200px]">
+    <h1 className="text-center text-[60px] font-bold">Important Notice</h1>
+    <div className="flex flex-row gap-8">
+        <div className="bg-black"></div>
+        <div className="bg-black"></div>
+    </div>
+</section>
 
    
     </main>

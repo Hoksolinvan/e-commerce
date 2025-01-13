@@ -76,10 +76,10 @@ const components: { title: string; href: string; description: string; categories
 const UserNavigationbar = () => {
     return(<>
 
-<section className=" bg-white border-b-[1px] border-gray py-4  items-center justify-between w-full px-32 z-[1px] fixed">
+<section className=" bg-white border-b-[1px] border-gray py-4  items-center justify-between w-full px-32 z-[1] fixed">
       
 
-<NavigationMenu className="flex flex-row gap-x-40">
+<NavigationMenu className="flex flex-row gap-x-40 ">
   <NavigationMenuList className="flex flex-row gap-x-8">
         <Link href="/" legacyBehavior passHref>
         <NavigationMenuLink className="text-4xl font-integral text-black">
@@ -93,10 +93,10 @@ const UserNavigationbar = () => {
         </NavigationMenuLink>
         </Link>
 
-    <NavigationMenuItem>
+    <NavigationMenuItem className="">
         <NavigationMenuTrigger className="font-satoshi text-black text-xl mt-3 ">categories</NavigationMenuTrigger>
-            <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[1200px] bg-white ">
+            <NavigationMenuContent className="z-[10]">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[1200px] bg-white z-[10]">
               {components.map((component) => (
                 <ListItem
                   key={component.title}

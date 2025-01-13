@@ -14,7 +14,7 @@ export default function RootLayout({
         // mx-32
         <main>
           
-          <div className="flex flex-col">
+          <div className="flex flex-col relative">
                <UserNavigationbar/>
             </div>
         
