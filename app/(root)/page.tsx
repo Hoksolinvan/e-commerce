@@ -48,11 +48,11 @@ const Homepage = () => {
    
 </section>
 
-<section className="w-full h-[200px]">
-    <h1 className="text-center text-[60px] font-bold">Important Notice</h1>
-    <div className="flex flex-row gap-8">
-        <div className="bg-black"></div>
-        <div className="bg-black"></div>
+<section className="w-full h-[200px] items-center">
+    <h1 className="text-center text-[52px] font-bold font-integral">Important Notice</h1>
+    <div className="w-full flex flex-row">
+        <div className="font-integral w-1/2 px-32 mt-[20]">Demo Project</div>
+        <div className="font-integral w-1/2 px-32 mt-[20]">stuff</div>
     </div>
 </section>
 
