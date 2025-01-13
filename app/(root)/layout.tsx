@@ -11,12 +11,16 @@ export default function RootLayout({
     children: React.ReactNode;
   }>) {
     return (
-   
+        // mx-32
         <main>
-            <div className="mx-32">
+          
+          <div className="flex flex-col">
                <UserNavigationbar/>
             </div>
-               {children}
+        
+            <div className="mt-[100px]">
+            {children}
+            </div>
         </main>
        
    

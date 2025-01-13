@@ -76,7 +76,7 @@ const components: { title: string; href: string; description: string; categories
 const UserNavigationbar = () => {
     return(<>
 
-<section className=" bg-white border-b-[1px] border-gray py-4  items-center justify-between w-full">
+<section className=" bg-white border-b-[1px] border-gray py-4  items-center justify-between w-full px-32 z-[1px] fixed">
       
 
 <NavigationMenu className="flex flex-row gap-x-40">
@@ -94,7 +94,7 @@ const UserNavigationbar = () => {
         </Link>
 
     <NavigationMenuItem>
-        <NavigationMenuTrigger className="font-satoshi text-black text-xl mt-3">categories</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="font-satoshi text-black text-xl mt-3 ">categories</NavigationMenuTrigger>
             <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[1200px] bg-white ">
               {components.map((component) => (

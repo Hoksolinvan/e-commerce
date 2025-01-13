@@ -25,24 +25,30 @@ const Homepage = () => {
         Shop Now
       </Button>
     </div>
-    <div className="flex flex-row">
-        <div>vgbhnj</div>
-        <div>vgbhjn</div>
-        <div>cfvtgybh</div>
+    <div className="flex flex-row w-[596px] h-[74px] gap-x-9">
+        <div className="w-[141px] h-[74px] flex flex-col">
+           <div className="w-[107px] h-[54px] font-satoshi font-black text-[40px]"> 200+</div> 
+            <div className="font-satoshi text-[16px] w-[141px] h-[22px]">International Brand</div>
+            </div>
+        <div className="w-[141px] h-[74px]">
+            <div className="w-[107px] h-[54px] font-satoshi font-black text-[40px]"> 2000+ </div>
+            <div className="font-satoshi text-[16px]  w-[141px] h-[22px]">High-Quality Products</div>
+        </div>
+        <div className="w-[141px] h-[74px]">
+            <div className="w-[107px] h-[54px] font-satoshi font-bold text-[40px]"> 30,000+</div>
+            <div className="font-satoshi text-[16px]  w-[141px] h-[22px]">Happy Customers</div>
+        </div>
   </div>
   </div>
   
   <div>
-  <Skeleton className="h-[400] w-[400] rounded-full  bg-[#9ca3af]" />
-
+  <Skeleton className="h-[400] w-[400] rounded-full  bg-[#9ca3af] z-[0]" />
   </div>
    
 </section>
 
 
-   <div>
-    vfgbrfv
-   </div>
+   
     </main>
     </>);
 }
