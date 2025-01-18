@@ -71,6 +71,11 @@ const Footer_compo = () => {
 
         <img src="/Frame 52.svg"></img>
        </section>
+
+       <section className="flex flex-row gap-[500px] mx-[110px] mt-[50px]">
+                <div className="text-slate-600">Shop.co © 2000-2023, All Rights Reserved</div>
+                <div></div>
+       </section>
     </section>
     
     </>);
