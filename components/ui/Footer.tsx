@@ -25,19 +25,52 @@ const Footer_compo = () => {
 
            
         </div>
-        <section className="flex flex-row mx-[110]">
-            <div className="[&>p]:mb-[20] [&>pre]:mb-[20]">
-                <p className="text-4xl font-integral text-black">SHOP.CO</p>
-                <pre className="font-satoshi">We have clothes that suits your style and which you’re proud to wear. From women to men.
-</pre>
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </section>
+        {/* className="flex flex-row mx-[110] gap-[100px]" */}
+        <section  className="mx-[110px] border-b-[1px] pb-9 border-black">
+            {/* <div className="[&>p]:mb-[20] [&>pre]:mb-[20] w-[248px]">
+                <p className="text-4xl text-black font-black font-integral">SHOP.CO</p>
+                <p className="font-satoshi text-[14px] text-neutral-500">We have clothes that suits your style and which you’re proud to wear. From women to men.
+                </p>
+                <div className="flex flex-row">
 
-       
+                <img src="/Social.svg"></img>
+
+
+                </div>
+            </div>
+            <div className="[&>p]:mb-[12]">
+            <p>COMPANY</p>
+                <p>About</p>
+                <p>Features</p>
+                <p>Works</p>
+                <p>Career</p>
+            </div>
+            <div className="[&>p]:mb-[12]">
+                <p>HELP</p>
+                <p>Customer Support</p>
+                <p>Delivery Details</p>
+                <p>Terms & Condition</p>
+                <p>Privacy Policy</p>
+               
+            </div>
+            <div className="[&>p]:mb-[12]">
+                <p>FAQ</p>
+                <p>Account</p>
+                <p>Manage Deliveries</p>
+                <p>Order</p>
+                <p>Payment</p>
+            </div>
+            <div className="[&>p]:mb-[12]">
+                <p>RESOURCES</p>
+                <p>Development Tutorials</p>
+                <p>How To - Blog</p>
+                <p>Youtube Playlist</p>
+            </div>
+        </section>
+        <hr></hr> */}
+
+        <img src="/Frame 52.svg"></img>
+       </section>
     </section>
     
     </>);
