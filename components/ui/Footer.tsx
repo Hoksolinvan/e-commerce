@@ -4,8 +4,9 @@ import { Input } from "@/components/ui/input";
 const Footer_compo = () => {
     return(<>
     
-    <section className="w-full bg-[#F2F0F1] mt-[150] h-[663]">
-        <div className="text-center bg-black mx-[110] flex flex-column w-[1240px] h-[180px] p-7 rounded-3xl gap-[20%] mb-[500] relative bottom-[90]">
+    {/* mt-[150] h-[663] */}
+    <section className="w-full bg-[#F2F0F1] mt-[150] h-[663] ">
+        <div className="text-center bg-black mx-[110] flex flex-column w-[1240px] h-[180px] p-7 rounded-3xl gap-[20%] relative bottom-[80]">
             <div className="text-gray-100 w-[551] h-[94] font-integral text-[40px] text-left ">STAY UPTO DATE ABOUT OUR LATEST OFFERS</div>
 
             <div className="text-gray-100 w-[349px] h-[108px]">
@@ -24,6 +25,18 @@ const Footer_compo = () => {
 
            
         </div>
+        <section className="flex flex-row mx-[110]">
+            <div className="[&>p]:mb-[20] [&>pre]:mb-[20]">
+                <p className="text-4xl font-integral text-black">SHOP.CO</p>
+                <pre className="font-satoshi">We have clothes that suits your style and which you’re proud to wear. From women to men.
+</pre>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+
        
     </section>
     

@@ -64,8 +64,9 @@ const Homepage = () => {
         All product data is provided by  <b className="text-black hover:underline hover:cursor-pointer">DummyJSON API.</b>
 
         <br></br>
-        <div className="mt-[30] text-black text-[24px]">Design Credits
+        <div className="mt-[30] text-black text-[24px] font-satoshi ">Design Credits
             <br></br> 
+            <br></br>
             <div className="flex flex-row gap-[40px]">
             <Button className="bg-black text-white rounded-xl w-[200px] py-[20] h-[50px] text-[16px] hover:bg-black hover:font-black hover:w-[205px] hover:h-[55px] transition-all duration-300">
                 View Figma Template 
