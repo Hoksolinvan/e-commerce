@@ -26,7 +26,7 @@ const Footer_compo = () => {
            
         </div>
         {/* className="flex flex-row mx-[110] gap-[100px]" */}
-        <section  className="mx-[110px] border-b-[1px] pb-9 border-black">
+        <section  className="mx-[110px] border-b-slate-200 border-b-[2px] pb-9  ">
             {/* <div className="[&>p]:mb-[20] [&>pre]:mb-[20] w-[248px]">
                 <p className="text-4xl text-black font-black font-integral">SHOP.CO</p>
                 <p className="font-satoshi text-[14px] text-neutral-500">We have clothes that suits your style and which you’re proud to wear. From women to men.
@@ -73,8 +73,8 @@ const Footer_compo = () => {
        </section>
 
        <section className="flex flex-row gap-[500px] mx-[110px] mt-[50px]">
-                <div className="text-slate-600">Shop.co © 2000-2023, All Rights Reserved</div>
-                <div></div>
+                <div className="text-slate-600 mt-[10]">Shop.co © 2000-2023, All Rights Reserved</div>
+                <div><img src="Frame 53.svg"></img></div>
        </section>
     </section>
     
