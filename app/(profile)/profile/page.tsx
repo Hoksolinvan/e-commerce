@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 
 
-const profile = () => {
+const Profile = () => {
     return( 
         <>
         
@@ -53,4 +53,4 @@ const profile = () => {
 }
 
 
-export default profile;
+export default Profile;
