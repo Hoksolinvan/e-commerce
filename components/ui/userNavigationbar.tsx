@@ -79,9 +79,11 @@ const UserNavigationbar = () => {
  
     return(<>
 
-<section className=" bg-white border-b-[1px] border-gray py-4  items-center justify-between w-full px-32 z-[1] fixed">
+
+<section className="bg-white  py-4  items-center justify-between w-full px-32 z-[1] fixed border-b-[1px] border-gray">
       
 
+<div className="">
 <NavigationMenu className="flex flex-row gap-x-40 ">
   <NavigationMenuList className="flex flex-row gap-x-8">
         <Link href="/" legacyBehavior passHref>
@@ -160,10 +162,12 @@ const UserNavigationbar = () => {
      </NavigationMenuList>
 
 </NavigationMenu>
+</div>
 
 
         
 </section>
+
     
     
     </>);
