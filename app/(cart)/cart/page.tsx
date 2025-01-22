@@ -2,6 +2,12 @@ import React from 'react';
 
 
 const Cart = () => {
+
+    let value: Number = 0;
+    let discount: Number = 0;
+    let delivery_fee: Number = 15;
+
+
     return(
         <>
 
@@ -13,7 +19,14 @@ const Cart = () => {
                 
                 
                 </div>
-                <div className="border-[1px] mt-[40] w-2/5 h-5/6 rounded-xl">
+                <div className="border-[1px] mt-[40] w-2/5 h-5/6 rounded-xl p-[20px]">
+                <p className="font-bold text-satoshi text-2xl b-[20px] mb-[30]">Order Summary</p>
+                <ul>
+                    <li className="mb-[20] text-gray-500 text-satoshi ">Subtotal</li>
+                    <li className="mb-[30] text-gray-500 text-satoshi">Discount</li>
+                    <li className="mb-[30] text-gray-500 text-satoshi">Delivery Fee</li>
+                </ul>
+
                 </div>
 
 

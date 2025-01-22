@@ -99,7 +99,7 @@ const UserNavigationbar = () => {
         </Link>
 
     <NavigationMenuItem className="">
-        <NavigationMenuTrigger className="font-satoshi text-black text-xl mt-3 ">categories</NavigationMenuTrigger>
+       <Link href="/categories"> <NavigationMenuTrigger className="font-satoshi text-black text-xl mt-3 ">categories</NavigationMenuTrigger> </Link>
             <NavigationMenuContent className="z-[10]">
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[1200px] bg-white z-[10]">
               {components.map((component) => (
