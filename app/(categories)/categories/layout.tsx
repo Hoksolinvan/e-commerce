@@ -19,7 +19,7 @@ export default function RootLayout({
                <UserNavigationbar/>
             </div>
         
-            <div h-full className="mt-[100px] flex flex-col">
+            <div h-full className="mt-[100px] flex flex-col  pb-[100px] mb-[50px]">
             {children}
             
             </div>

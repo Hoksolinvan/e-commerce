@@ -16,8 +16,11 @@ import {
 import { cn } from '@/lib/utils';
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+
+import useStore from '../../app/store/store';
 
 
 
@@ -31,7 +34,7 @@ const components: { title: string; href: string; description: string; categories
       href: "/docs/primitives/alert-dialog",
       description:
         "Discover trendy shirts, shoes, and watches for men.",
-        categories: [["SHIRTS","/"],["SHOES","/"],["WATCHES","/"]],
+        categories: [["SHIRTS","/categories"],["SHOES","/"],["WATCHES","/"]],
     },
     {
       title: "Women's Fashion",
@@ -76,6 +79,11 @@ const components: { title: string; href: string; description: string; categories
 
 
 const UserNavigationbar = () => {
+
+  const count = useStore((state: any) => state.count)
+
+  const router = useRouter();
+          
  
     return(<>
 
@@ -113,8 +121,15 @@ const UserNavigationbar = () => {
 
                   {component.categories.map((x, index) => (
     <React.Fragment key={index}>
+
+      
       <i 
-        onClick={() => {  }} 
+        onClick={() => {
+          
+          router.push(`/categories?type=${x[0]}`);
+          
+
+          }} 
         className="cursor-pointer font-medium hover:underline"
       >
         {x[0]}
@@ -139,7 +154,24 @@ const UserNavigationbar = () => {
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
             </svg>
         </div>
-    <Input type="search" className="w-[500px] border-none bg-gray-100 mt-3 p-7 pl-12 rounded-3xl placeholder:text-slate-500 text-base	bg-[url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search')]" placeholder="Search your product here..."></Input>
+    <Input type="search" className="w-[500px] border-none bg-gray-100 mt-3 p-7 pl-12 rounded-3xl placeholder:text-slate-500 text-base	bg-[url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search')]" placeholder="Search your product here..." onChange={
+      (e) => {
+        const value = e.target.value;
+
+        if (value ===' '){
+          router.push(`/`);
+          return;
+        }
+
+        router.push(`/categories?type=${value}`);
+        // const filteredProducts = products.filter(product =>
+        //   product.title.toLowerCase().includes(value.toLowerCase())
+        // );
+        // setProducts(filteredProducts); 
+        return;
+
+      }
+    }></Input>
     
     </NavigationMenuItem>
 
@@ -154,7 +186,27 @@ const UserNavigationbar = () => {
     <NavigationMenuList>
     <NavigationMenuItem className="mt-3 flex flex-row gap-3 hover:pointer">
         
-   <Link href="/cart"> <svg  className="hover:cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>   </Link>
+    <div className="relative">
+  <Link href="/cart">
+    <svg
+      className="hover:cursor-pointer"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="#000000"
+    >
+      <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
+    </svg>
+  </Link>
+
+  {/* Overlay circle */}
+  {count > 0 && (
+        <div className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+          {count}
+        </div>
+      )}
+</div>
    <Link href="/profile"> <svg className="hover:cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg></Link>
 
      </NavigationMenuItem>
