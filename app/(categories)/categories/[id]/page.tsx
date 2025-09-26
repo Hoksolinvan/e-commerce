@@ -9,20 +9,10 @@ interface PageProps {
   }
 }
 
- function Page({ params }: PageProps) {
-  return (
-    <div>
-      Category ID: {params.id}
-    </div>
-  );
-}
-
-
 const ProductPage = ({ params }: PageProps) => {
-  const [product, setProduct] = useState<String | null>(null)
+  const [product, setProduct] = useState<any | null>(null)
   const addToCart = useStore((state) => state.addToCart)
   const increase = useStore((state) => state.increase)
-
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${params.id}`)
@@ -34,13 +24,21 @@ const ProductPage = ({ params }: PageProps) => {
 
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold">{product.title}</h1>
-      <img src={product.thumbnail} alt={product.title} className="w-[300px] mt-4 rounded-xl" />
+      <h1 className="text-3xl font-bold">Category ID: {params.id}</h1>
+      <h2 className="text-2xl font-semibold mt-2">{product.title}</h2>
+      <img
+        src={product.thumbnail}
+        alt={product.title}
+        className="w-[300px] mt-4 rounded-xl"
+      />
       <p className="mt-4 text-gray-600">{product.description}</p>
       <p className="mt-2 font-semibold">Price: ${product.price}</p>
 
       <button
-        onClick={() => {addToCart(product); increase()}}
+        onClick={() => {
+          addToCart(product)
+          increase()
+        }}
         className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
       >
         Add to Cart
@@ -49,4 +47,4 @@ const ProductPage = ({ params }: PageProps) => {
   )
 }
 
-export default ProductPage;
+export default ProductPage
