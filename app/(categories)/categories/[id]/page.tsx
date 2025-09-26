@@ -9,6 +9,13 @@ interface PageProps {
   }
 }
 
+export default function Page({ params }: PageProps) {
+  return (
+    <div>
+      Category ID: {params.id}
+    </div>
+  );
+}
 
 
 const ProductPage = ({ params }: PageProps) => {
