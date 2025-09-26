@@ -9,8 +9,17 @@ interface PageProps {
   }
 }
 
+// Define a type for the product data we fetch
+interface Product {
+  id: number
+  title: string
+  description: string
+  price: number
+  thumbnail: string
+}
+
 const ProductPage = ({ params }: PageProps) => {
-  const [product, setProduct] = useState<any | null>(null)
+  const [product, setProduct] = useState<Product | null>(null)
   const addToCart = useStore((state) => state.addToCart)
   const increase = useStore((state) => state.increase)
 
@@ -18,14 +27,15 @@ const ProductPage = ({ params }: PageProps) => {
     fetch(`https://dummyjson.com/products/${params.id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
+      .catch((err) => console.error(err))
   }, [params.id])
 
   if (!product) return <div>Loading...</div>
 
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold">Category ID: {params.id}</h1>
-      <h2 className="text-2xl font-semibold mt-2">{product.title}</h2>
+      <h1 className="text-2xl font-semibold mb-2">Category ID: {params.id}</h1>
+      <h2 className="text-3xl font-bold">{product.title}</h2>
       <img
         src={product.thumbnail}
         alt={product.title}
