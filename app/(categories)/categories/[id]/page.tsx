@@ -1,9 +1,7 @@
-'use client'
+// app/(categories)/categories/[id]/page.tsx
+import React from 'react'
 
-import React, { useEffect, useState } from 'react'
-import useStore from '../../../store/store'
-
-// Define a type for the product data we fetch
+// Minimal Product type
 interface Product {
   id: number
   title: string
@@ -12,19 +10,10 @@ interface Product {
   thumbnail: string
 }
 
-const ProductPage = ({ params }: { params: { id: string } }) => {
-  const [product, setProduct] = useState<Product | null>(null)
-  const addToCart = useStore((state) => state.addToCart)
-  const increase = useStore((state) => state.increase)
-
-  useEffect(() => {
-    fetch(`https://dummyjson.com/products/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data))
-      .catch((err) => console.error(err))
-  }, [params.id])
-
-  if (!product) return <div>Loading...</div>
+// Async server component: Next.js expects this
+const ProductPage = async ({ params }: { params: { id: string } }) => {
+  const res = await fetch(`https://dummyjson.com/products/${params.id}`, { cache: 'no-store' })
+  const product: Product = await res.json()
 
   return (
     <div className="p-8">
@@ -37,16 +26,6 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
       />
       <p className="mt-4 text-gray-600">{product.description}</p>
       <p className="mt-2 font-semibold">Price: ${product.price}</p>
-
-      <button
-        onClick={() => {
-          addToCart(product)
-          increase()
-        }}
-        className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-      >
-        Add to Cart
-      </button>
     </div>
   )
 }
