@@ -1,13 +1,9 @@
-// app/(categories)/categories/[id]/page.tsx
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import useStore from '../../../store/store'
 
-interface PageProps {
-  params: {
-    id: string
-  }
-}
-
+// Define a type for the product data we fetch
 interface Product {
   id: number
   title: string
@@ -16,10 +12,19 @@ interface Product {
   thumbnail: string
 }
 
-// Async server component: fetch data before rendering
-const ProductPage = async ({ params }: PageProps) => {
-  const res = await fetch(`https://dummyjson.com/products/${params.id}`)
-  const product: Product = await res.json()
+const ProductPage = ({ params }: { params: { id: string } }) => {
+  const [product, setProduct] = useState<Product | null>(null)
+  const addToCart = useStore((state) => state.addToCart)
+  const increase = useStore((state) => state.increase)
+
+  useEffect(() => {
+    fetch(`https://dummyjson.com/products/${params.id}`)
+      .then((res) => res.json())
+      .then((data) => setProduct(data))
+      .catch((err) => console.error(err))
+  }, [params.id])
+
+  if (!product) return <div>Loading...</div>
 
   return (
     <div className="p-8">
@@ -32,6 +37,16 @@ const ProductPage = async ({ params }: PageProps) => {
       />
       <p className="mt-4 text-gray-600">{product.description}</p>
       <p className="mt-2 font-semibold">Price: ${product.price}</p>
+
+      <button
+        onClick={() => {
+          addToCart(product)
+          increase()
+        }}
+        className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+      >
+        Add to Cart
+      </button>
     </div>
   )
 }
