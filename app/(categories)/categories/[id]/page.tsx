@@ -9,7 +9,7 @@ interface PageProps {
   }
 }
 
-export default function Page({ params }: PageProps) {
+ function Page({ params }: PageProps) {
   return (
     <div>
       Category ID: {params.id}
