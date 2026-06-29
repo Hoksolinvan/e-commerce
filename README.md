@@ -8,7 +8,7 @@ This is a fictional E-Commerce website that attempts to mimic contemporary shopp
 
 # 📚 Techstack Used:
 
-- **Nextjs 14* ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
+- **Nextjs 14** ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
 - **Axios** ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white)
 - **Redux** ![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat&logo=redux&logoColor=white)
 - **DummyJSON API** ![DummyJSON](https://img.shields.io/badge/DummyJSON-FF6F00?style=flat)
